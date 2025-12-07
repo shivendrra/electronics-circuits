@@ -20,12 +20,12 @@ module full_adder_struct (
 );
   wire w1, w2, w3, w4;
 
-  xor (w1, a, b);
-  xor (sum, w1, cin);
+  xor #1 (w1, a, b);
+  xor #1 (sum, w1, cin);
 
-  and (w2, a, b);
-  and (w3, b, cin);
-  and (w4, cin, a);
+  and #1 (w2, a, b);
+  and #1 (w3, b, cin);
+  and #1 (w4, cin, a);
 
-  or  (cout, w2, w3, w4);  // final output
+  or #1 (cout, w2, w3, w4);  // final output
 endmodule
